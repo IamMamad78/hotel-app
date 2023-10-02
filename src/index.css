@@ -9,8 +9,8 @@
   --text-100: #f1f5f9;
   --text-300: #d1d5db;
   --white: #fff;
-  --primary-700: #4338ca;
-  --primary-600: #4f46e5;
+  --primary-700: rgb(51, 129, 231);
+  --primary-600: rgb(61, 145, 255);
   --primary-100: #e0e7ff;
   --rose-500: #f43f5e;
 }

@@ -113,9 +113,14 @@
 
 .date {
   position: absolute;
-  top: 50px;
-  left: -5rem;
+  top: 70px;
+  right: 1rem;
   z-index: 1002;
+  max-width: 260px;
+}
+
+.date button{
+  margin: 0;
 }
 
 .dateIcon {
@@ -414,5 +419,9 @@ a.active {
   .guestOptions{
     width: 220px;
 
+  }
+  .date {
+    left: -3rem;
+    right: 0;
   }
 }
