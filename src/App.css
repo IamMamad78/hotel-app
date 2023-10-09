@@ -269,6 +269,7 @@
 .appLayout {
   margin-top: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   height: calc(100vh - 130px);
   /* background-color: var(--text-100); */
@@ -427,5 +428,8 @@ a.active {
   .date {
     left: -3rem;
     right: 0;
+  }
+  .appLayout {
+    flex-direction: row;
   }
 }
