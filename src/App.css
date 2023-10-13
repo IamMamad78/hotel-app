@@ -274,10 +274,12 @@
   height: calc(100vh - 130px);
   /* background-color: var(--text-100); */
   align-items: stretch;
+  padding: 1rem;
+  gap: 2rem;
 }
 
 .sidebar {
-  width: 35%;
+  width: 100%;
   overflow-y: scroll;
   padding-right: 1rem;
 }
