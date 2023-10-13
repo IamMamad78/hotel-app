@@ -13,7 +13,10 @@ import {
 } from "react-router-dom";
 
 function Header() {
-  const [destination, setDestination] = useState("");
+  const [serachParams, setSearchParams] = useSearchParams();
+  const [destination, setDestination] = useState(
+    serachParams.get("destination") || ""
+  );
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -44,7 +47,6 @@ function Header() {
     maxWidth: "260px",
   };
   const navigate = useNavigate();
-  const [serachParams, setSearchParams] = useSearchParams();
   const handleSearch = () => {
     const encodedParams = createSearchParams({
       date: JSON.stringify(date),
