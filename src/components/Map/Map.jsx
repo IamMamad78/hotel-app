@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import useGeoLocation from "../../Hooks/useGeoLocation";
 
-function Map({markerLocations}) {
+function Map({ markerLocations }) {
   const [mapCenter, setMapCenter] = useState([52.52, 5.25]);
   const [searchParams, setSearchParams] = useSearchParams();
   const lat = searchParams.get("lat");
@@ -68,7 +68,8 @@ function ChangeCenter({ position }) {
 function DetectClick() {
   const navigate = useNavigate();
   useMapEvent({
-    click: (e) => navigate(`/bookmark?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    click: (e) =>
+      navigate(`/bookmark/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
   });
   return null;
 }
