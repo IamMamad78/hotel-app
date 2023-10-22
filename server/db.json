@@ -1323,5 +1323,24 @@
       ]
     }
   ],
-  "bookmarks": []
+  "bookmarks": [
+    {
+      "id" : 1,
+      "cityName" : "Sanandaj",
+      "country": "Iran",
+      "countryCode" : "IR",
+      "latitude" : "20.505403548630",
+      "longitude" : "20.50546548864",
+      "host_location" : "iran"
+    },
+    {
+      "id" : 2,
+      "cityName" : "Paris",
+      "country": "France",
+      "countryCode" : "FR",
+      "latitude" : "20.505403548630",
+      "longitude" : "20.50546548864",
+      "host_location" : "france"
+    }
+  ]
 }
