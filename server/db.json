@@ -1329,18 +1329,18 @@
       "cityName" : "Sanandaj",
       "country": "Iran",
       "countryCode" : "IR",
-      "latitude" : "20.505403548630",
-      "longitude" : "20.50546548864",
+      "latitude" : "35.2867471",
+      "longitude" : "46.914956",
       "host_location" : "iran"
     },
     {
       "id" : 2,
-      "cityName" : "Paris",
-      "country": "France",
-      "countryCode" : "FR",
-      "latitude" : "20.505403548630",
-      "longitude" : "20.50546548864",
-      "host_location" : "france"
+      "cityName" : "Erbil",
+      "country": "Iraq",
+      "countryCode" : "IQ",
+      "latitude" : "36.1974061",
+      "longitude" : "43.9265615",
+      "host_location" : "iraq"
     }
   ]
 }
