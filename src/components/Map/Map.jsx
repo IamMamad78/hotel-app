@@ -9,12 +9,11 @@ import {
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import useGeoLocation from "../../Hooks/useGeoLocation";
+import useUrlLocation from "../../Hooks/useUrlLocation";
 
 function Map({ markerLocations }) {
   const [mapCenter, setMapCenter] = useState([52.52, 5.25]);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  const [lat, lng] = useUrlLocation();
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,

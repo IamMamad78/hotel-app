@@ -322,18 +322,28 @@
 
 /* form */
 
+.addNewBookmark--title{
+  font-size: 1rem;
+}
+
+.form{
+  margin-top: 2rem;
+}
+
 .form .formControl {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   position: relative;
 }
 
 .formControl label {
   display: block;
   margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+
 }
 
 .formControl input {
-  border: 1px solid var(--text-400);
+  border: 1px solid var(--text-300);
   padding: 0.5rem;
   border-radius: 0.5rem;
   width: 100%;
@@ -341,22 +351,33 @@
 
 .buttons {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .btn {
-  padding: 0.5rem 1rem;
+  width: 100%;
+  padding: 0.7rem 1rem;
   border-radius: 0.5rem;
 }
 .btn--primary {
   background-color: var(--primary-600);
+  border: 1px solid var(--primary-700);
+
   color: #fff;
 }
 
 .btn--back {
   color: var(--primary-700);
   font-size: 30px;
+}
+
+.btn--previous{
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--primary-700);
+  color: var(--primary-700);
 }
 
 .formControl .flag {
@@ -447,8 +468,28 @@ a.active {
   .single-bookmark__location{
     padding: 1rem 3rem;
   }
+
+  .addNewBookmark--title{
+    font-size: 1.5rem;
+  }
+
+  .formControl label {
+    font-size: 1rem;
+  }
+
+  .btn{
+    width: 170px;
+  }
+
   .btn--back {
     color: var(--primary-700);
     font-size: 30px;
+  }
+  .btn--previous{
+    margin-bottom: 0;
+  }
+
+  .buttons {
+    flex-direction: row;
   }
 }
