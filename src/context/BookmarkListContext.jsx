@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
-import useFetch from "../Hooks/useFetch";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -29,10 +22,21 @@ function bookmarkReducer(state, action) {
       return {
         ...state,
         isLoading: false,
-        bookmarks: action.payload,
+        currentBookmark: action.payload,
       };
     case "bookmark/created":
-      return { ...state, isLoading: false, currentBookmark: action.payload };
+      return {
+        ...state,
+        isLoading: false,
+        bookmarks: [...state.bookmarks, action.payload],
+      };
+    case "bookmark/deleted":
+      return {
+        ...state,
+        isLoading: false,
+        bookmarks: state.bookmarks.filter((item) => item.id !== action.payload),
+        currentBookmark: null,
+      };
     case "rejected":
       return { ...state, isLoading: false, error: action.payload };
 
@@ -46,9 +50,6 @@ function BookmarkListProvider({ children }) {
     bookmarkReducer,
     initialState
   );
-  // const [currentBookmark, setCurrentBookmark] = useState(null);
-  // const [bookmarks, setBookmarks] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchBookmarkList() {
@@ -68,6 +69,8 @@ function BookmarkListProvider({ children }) {
   }, []);
 
   async function getBookmark(id) {
+    if (Number(id) === currentBookmark?.id) return;
+
     dispatch({ type: "loading" });
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
@@ -99,14 +102,16 @@ function BookmarkListProvider({ children }) {
   }
 
   async function deleteBookmark(id) {
-    setIsLoading(true);
+    dispatch({ type: "loading" });
     try {
       await axios.delete(`${BASE_URL}/bookmarks/${id}`);
-      setBookmarks((prev) => prev.filter((item) => item.id !== id));
+      dispatch({ type: "bookmark/deleted", payload: id });
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setIsLoading(false);
+      dispatch({
+        type: "rejected",
+        payload: error.message,
+      });
     }
   }
 

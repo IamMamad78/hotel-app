@@ -1334,13 +1334,13 @@
       "id": 1
     },
     {
-      "cityName": "San Francisco",
-      "country": "United States of America (the)",
-      "countryCode": "US",
-      "latitude": "37.71293461841091",
-      "longitude": "-122.50854492187501",
-      "host_location": "San Francisco United States of America (the)",
-      "id": 3
+      "cityName": "Villa Gesell",
+      "country": "Argentina",
+      "countryCode": "AR",
+      "latitude": "-37.25262950768583",
+      "longitude": "-56.97007656097413",
+      "host_location": "Villa Gesell Argentina",
+      "id": 9
     }
   ]
 }
