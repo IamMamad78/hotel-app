@@ -26,7 +26,11 @@ function bookmarkReducer(state, action) {
     case "bookmarks/loaded":
       return { ...state, isLoading: false, bookmarks: action.payload };
     case "bookmark/loaded":
-      return {};
+      return {
+        ...state,
+        isLoading: false,
+        bookmarks: action.payload,
+      };
     case "bookmark/created":
       return {};
     case "rejected":
@@ -64,15 +68,19 @@ function BookmarkListProvider({ children }) {
   }, []);
 
   async function getBookmark(id) {
-    setIsLoading(true);
-    setCurrentBookmark(null);
+    dispatch({ type: "loading" });
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
-      setCurrentBookmark(data);
+      dispatch({
+        type: "bookmark/loaded",
+        payload: data,
+      });
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setIsLoading(false);
+      dispatch({
+        type: "rejected",
+        payload: "an error occurred fetching single bookmark",
+      });
     }
   }
 
