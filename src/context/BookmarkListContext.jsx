@@ -32,7 +32,7 @@ function bookmarkReducer(state, action) {
         bookmarks: action.payload,
       };
     case "bookmark/created":
-      return {};
+      return { ...state, isLoading: false, currentBookmark: action.payload };
     case "rejected":
       return { ...state, isLoading: false, error: action.payload };
 
@@ -85,17 +85,16 @@ function BookmarkListProvider({ children }) {
   }
 
   async function createBookmark(newBookmark) {
-    setIsLoading(true);
-    setCurrentBookmark(null);
+    dispatch({ type: "loading" });
     try {
       const { data } = await axios.post(`${BASE_URL}/bookmarks/`, newBookmark);
-      setCurrentBookmark(data);
-      setBookmarks((prev) => [...prev, data]);
-      console.log(data);
+      dispatch({ type: "bookmark/created", payload: data });
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setIsLoading(false);
+      dispatch({
+        type: "rejected",
+        payload: error.message,
+      });
     }
   }
 
