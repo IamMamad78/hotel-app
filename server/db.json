@@ -1334,13 +1334,13 @@
       "id": 1
     },
     {
-      "cityName": "Tehran",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.68142632396192",
-      "longitude": "51.39953613281251",
-      "host_location": "Tehran Iran (Islamic Republic of)",
-      "id": 2
+      "cityName": "San Francisco",
+      "country": "United States of America (the)",
+      "countryCode": "US",
+      "latitude": "37.71293461841091",
+      "longitude": "-122.50854492187501",
+      "host_location": "San Francisco United States of America (the)",
+      "id": 3
     }
   ]
 }
