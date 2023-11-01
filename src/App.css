@@ -39,9 +39,7 @@
   position: relative;
   font-size: 0.8rem;
 }
-.headerSearchItem .seperator {
-  display: none;
-}
+
 .textField {
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
@@ -55,7 +53,7 @@
   color: var(--rose-500);
 }
 .headerSearchBtn {
-  width: 100%;
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,8 +64,13 @@
 }
 
 
-
 /* End of Header */
+.guestOptionsTitle{
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+}
 
 .guestOptions {
   background-color: #fff;
@@ -76,8 +79,8 @@
   padding: 1rem 0.8rem;
   border: 1px solid var(--text-100);
   position: absolute;
-  top: 3rem;
-  width: 250px;
+  top: 3.5rem;
+  width: 270px;
   z-index: 1000;
   margin-top: 1rem;
 }
@@ -87,6 +90,7 @@
   gap: 1rem;
   justify-content: space-between;
 }
+
 .guestOptionItem:not(:last-child) {
   margin-bottom: 1rem;
 }
@@ -126,11 +130,12 @@
 
 .dateIcon {
   color: var(--primary-700);
+  font-size: 0.9rem;
 }
 
 .dateDropDown {
   margin-left: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 
@@ -361,14 +366,25 @@
 
 .btn {
   width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
+
+.bookmarkBtn{
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 1rem;
+}
+
 .btn--primary {
   background-color: var(--primary-600);
   border: 1px solid var(--primary-700);
 
   color: #fff;
+}
+.headerBtn{
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn--back {
@@ -380,6 +396,15 @@
   margin-bottom: 1.2rem;
   border: 1px solid var(--primary-700);
   color: var(--primary-700);
+}
+
+.bookmarkIcon{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  color:#fff;;
+  background-color: var(--primary-600);
+  
 }
 
 .formControl .flag {
@@ -434,21 +459,20 @@ a.active {
 
   .headerSearchItem{
     width: auto;
+
   }
 
-  .headerSearchItem .seperator {
-    display: inline-block;
-    width: 1px;
-    height: 30px;
-    background-color: var(--text-400);
-    margin: 0 1rem;
-  }
   .headerSearchItem:not(:last-child){
     border: none;
   }
   .headerSearchBtn{
     width: 45px;
   }
+
+  .headerBtn{
+    width: 150px;
+  }
+
   .guestOptions{
     width: 220px;
 
@@ -480,7 +504,11 @@ a.active {
   }
 
   .btn{
-    width: 170px;
+    width: 45px;
+  }
+
+  .bookmarkBtn{
+    width: 175px;
   }
 
   .btn--back {

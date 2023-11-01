@@ -1341,6 +1341,15 @@
       "longitude": "-56.97007656097413",
       "host_location": "Villa Gesell Argentina",
       "id": 9
+    },
+    {
+      "cityName": "Barneveld",
+      "country": "Netherlands (the)",
+      "countryCode": "NL",
+      "latitude": "52.11907882503531",
+      "longitude": "5.493164062500001",
+      "host_location": "Barneveld Netherlands (the)",
+      "id": 15
     }
   ]
 }

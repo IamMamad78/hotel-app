@@ -92,7 +92,7 @@ function AddNewBookmark() {
         </div>
         <div className="buttons">
           <button
-            className="btn btn--previous"
+            className="bookmarkBtn btn--previous"
             onClick={(e) => {
               e.preventDefault();
               navigate(-1);
@@ -100,7 +100,7 @@ function AddNewBookmark() {
           >
             Back
           </button>
-          <button className="btn btn--primary">Add</button>
+          <button className="bookmarkBtn btn--primary">Add</button>
         </div>
       </form>
     </div>

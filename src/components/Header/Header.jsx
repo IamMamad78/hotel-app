@@ -1,5 +1,12 @@
-import { MdLocationOn } from "react-icons/md";
-import { HiCalendar, HiSearch, HiMinus, HiPlus } from "react-icons/hi";
+import { MdLocationOn, MdPerson } from "react-icons/md";
+import {
+  HiCalendar,
+  HiSearch,
+  HiMinus,
+  HiPlus,
+  HiBookmark,
+  HiUserGroup,
+} from "react-icons/hi";
 import { useRef, useState } from "react";
 import useOutsideClick from "../../Hooks/useOutsideClick";
 import "react-date-range/dist/styles.css";
@@ -72,7 +79,6 @@ function Header() {
             name="destination"
             id="destination"
           />
-          <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
           <HiCalendar className="headerIcon dateIcon" />
@@ -92,13 +98,15 @@ function Header() {
               moveRangeOnFirstSelection={true}
             />
           )}
-          <span className="seperator"></span>
         </div>
-        <div className="headerSearchItem">
-          <div id="optionDropDown" onClick={() => setOpenOptions(!openOptions)}>
-            {options.adult} Adult &bull; {options.children} Children &bull;{" "}
-            {options.room} Room
-          </div>
+        <div className="headerSearchItem" style={{ border: "none" }}>
+          <button className="btn headerSearchBtn">
+            <HiUserGroup
+              className="headerIcon"
+              id="optionDropDown"
+              onClick={() => setOpenOptions(!openOptions)}
+            />
+          </button>
           {openOptions && (
             <GuestOptionList
               setOpenOptions={setOpenOptions}
@@ -106,12 +114,19 @@ function Header() {
               handleOptions={handleOptions}
             />
           )}
-          <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
-          <button className="headerSearchBtn" onClick={handleSearch}>
-            <HiSearch className="headerIcon" />
-          </button>
+          <div className="headerBtn">
+            <button className="headerSearchBtn" onClick={handleSearch}>
+              <HiSearch className="headerIcon" />
+            </button>
+            <button className="headerSearchBtn">
+              <HiBookmark className="bookmarkIcon" />
+            </button>
+            <button className="headerSearchBtn">
+              <MdPerson className="bookmarkIcon" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -126,6 +141,10 @@ function GuestOptionList({ options, handleOptions, setOpenOptions }) {
 
   return (
     <div className="guestOptions" ref={optionsRef}>
+      <span className="guestOptionsTitle">
+        {options.adult} Adult &bull; {options.children} Children &bull;
+        {options.room} Room
+      </span>
       <OpenItem
         options={options}
         type="adult"
