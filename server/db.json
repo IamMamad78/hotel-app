@@ -1350,6 +1350,33 @@
       "longitude": "5.493164062500001",
       "host_location": "Barneveld Netherlands (the)",
       "id": 15
+    },
+    {
+      "cityName": "Nunspeet",
+      "country": "Netherlands (the)",
+      "countryCode": "NL",
+      "latitude": "52.36525996102017",
+      "longitude": "5.701904296875",
+      "host_location": "Nunspeet Netherlands (the)",
+      "id": 16
+    },
+    {
+      "cityName": "Korperich",
+      "country": "Germany",
+      "countryCode": "DE",
+      "latitude": "49.93621758144621",
+      "longitude": "6.284179687500001",
+      "host_location": "Korperich Germany",
+      "id": 17
+    },
+    {
+      "cityName": "Region 6, Unorganized",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": "62.87344325444945",
+      "longitude": "-119.53125000000001",
+      "host_location": "Region 6, Unorganized Canada",
+      "id": 18
     }
   ]
 }

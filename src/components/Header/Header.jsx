@@ -124,7 +124,7 @@ function Header() {
               <HiBookmark className="bookmarkIcon" />
             </button>
             <button className="headerSearchBtn">
-              <MdPerson className="bookmarkIcon" />
+              <MdPerson className="bookmarkIcon" />         
             </button>
           </div>
         </div>
