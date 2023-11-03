@@ -1,4 +1,4 @@
-import { MdLocationOn, MdPerson } from "react-icons/md";
+import { MdLocationOn, MdPerson, MdLogout } from "react-icons/md";
 import {
   HiCalendar,
   HiSearch,
@@ -14,10 +14,12 @@ import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import {
+  NavLink,
   createSearchParams,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
+import { useAuth } from "../../context/AuthProvider";
 
 function Header() {
   const [serachParams, setSearchParams] = useSearchParams();
@@ -120,12 +122,12 @@ function Header() {
             <button className="headerSearchBtn" onClick={handleSearch}>
               <HiSearch className="headerIcon" />
             </button>
-            <button className="headerSearchBtn">
-              <HiBookmark className="bookmarkIcon" />
-            </button>
-            <button className="headerSearchBtn">
-              <MdPerson className="bookmarkIcon" />         
-            </button>
+            <NavLink to="/bookmark">
+              <button className="headerSearchBtn">
+                <HiBookmark className="bookmarkIcon" />
+              </button>
+            </NavLink>
+            <User />
           </div>
         </div>
       </div>
@@ -187,6 +189,31 @@ function OpenItem({ options, type, minLimit, handleOptions }) {
           <HiPlus />
         </button>
       </div>
+    </div>
+  );
+}
+
+function User() {
+  const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth();
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
+  return (
+    <div>
+      {isAuthenticated ? (
+        <button className="headerSearchBtn">
+          <MdLogout onClick={handleLogout} className="bookmarkIcon" />
+        </button>
+      ) : (
+        <NavLink to="/login">
+          <button className="headerSearchBtn">
+            <MdPerson className="bookmarkIcon" />
+          </button>
+        </NavLink>
+      )}
     </div>
   );
 }
