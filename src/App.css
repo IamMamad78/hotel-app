@@ -128,13 +128,7 @@
   margin: 0;
 }
 
-.dateIcon {
-  color: var(--primary-700);
-  font-size: 0.9rem;
-}
-
 .dateDropDown {
-  margin-left: 0.5rem;
   font-size: 0.9rem;
 }
 
@@ -478,8 +472,7 @@ a.active {
 
   }
   .date {
-    left: -3rem;
-    right: 0;
+    right: -5rem;
   }
   .appLayout {
     flex-direction: row;

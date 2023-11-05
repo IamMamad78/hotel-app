@@ -71,6 +71,7 @@ function Header() {
   return (
     <div className="header">
       <div className="headerSearch">
+        
         <div className="headerSearchItem">
           <MdLocationOn className="headerIcon locationIcon" />
           <input
@@ -83,8 +84,17 @@ function Header() {
             id="destination"
           />
         </div>
-        <div className="headerSearchItem" id="dateDropDown">
-          <HiCalendar className="headerIcon dateIcon" />
+        <div
+          className="headerSearchItem"
+          id="dateDropDown"
+          style={{ border: "none" }}
+        >
+          <button className="btn headerSearchBtn">
+            <HiCalendar
+              className="headerIcon dateDropDown"
+              onClick={() => setOpenDate(!openDate)}
+            />
+          </button>
           <DateOptions
             openDate={openDate}
             setOpenDate={setOpenDate}
@@ -187,15 +197,15 @@ function OpenItem({ options, type, minLimit, handleOptions }) {
 
 function DateOptions({ openDate, setOpenDate, date, setDate, styles }) {
   const optionsRef = useRef();
-  useOutsideClick(optionsRef, "dateDropDown", ()=>setOpenDate(false))
+  useOutsideClick(optionsRef, "dateDropDown", () => setOpenDate(false));
   return (
     <div ref={optionsRef}>
-      <div className="dateDropDown" onClick={() => setOpenDate(!openDate)}>
+      {/* <div className="dateDropDown" >
         {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
           date[0].endDate,
           "MM/dd/yyyy"
         )}`}
-      </div>
+      </div> */}
       {openDate && (
         <DateRange
           style={styles}
