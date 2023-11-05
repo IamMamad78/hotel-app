@@ -67,6 +67,7 @@ function Header() {
       search: encodedParams.toString(),
     });
   };
+
   return (
     <div className="header">
       <div className="headerSearch">
@@ -82,24 +83,15 @@ function Header() {
             id="destination"
           />
         </div>
-        <div className="headerSearchItem">
+        <div className="headerSearchItem" id="dateDropDown">
           <HiCalendar className="headerIcon dateIcon" />
-          <div className="dateDropDown" onClick={() => setOpenDate(!openDate)}>
-            {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
-              date[0].endDate,
-              "MM/dd/yyyy"
-            )}`}
-          </div>
-          {openDate && (
-            <DateRange
-              style={styles}
-              ranges={date}
-              className="date"
-              onChange={(item) => setDate([item.selection])}
-              minDate={new Date()}
-              moveRangeOnFirstSelection={true}
-            />
-          )}
+          <DateOptions
+            openDate={openDate}
+            setOpenDate={setOpenDate}
+            date={date}
+            setDate={setDate}
+            styles={styles}
+          />
         </div>
         <div className="headerSearchItem" style={{ border: "none" }}>
           <button className="btn headerSearchBtn">
@@ -189,6 +181,31 @@ function OpenItem({ options, type, minLimit, handleOptions }) {
           <HiPlus />
         </button>
       </div>
+    </div>
+  );
+}
+
+function DateOptions({ openDate, setOpenDate, date, setDate, styles }) {
+  const optionsRef = useRef();
+  useOutsideClick(optionsRef, "dateDropDown", ()=>setOpenDate(false))
+  return (
+    <div ref={optionsRef}>
+      <div className="dateDropDown" onClick={() => setOpenDate(!openDate)}>
+        {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+          date[0].endDate,
+          "MM/dd/yyyy"
+        )}`}
+      </div>
+      {openDate && (
+        <DateRange
+          style={styles}
+          ranges={date}
+          className="date"
+          onChange={(item) => setDate([item.selection])}
+          minDate={new Date()}
+          moveRangeOnFirstSelection={true}
+        />
+      )}
     </div>
   );
 }

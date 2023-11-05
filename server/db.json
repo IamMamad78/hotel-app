@@ -1325,22 +1325,22 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Sanandaj",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.30319461962503",
-      "longitude": "47.07641601562501",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
-      "id": 1
+      "cityName": "Amsterdam",
+      "country": "Netherlands (the)",
+      "countryCode": "NL",
+      "latitude": "52.363692756596194",
+      "longitude": "4.894087901782501",
+      "host_location": "Amsterdam Netherlands (the)",
+      "id": 2
     },
     {
-      "cityName": "Tehran",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.65228852566855",
-      "longitude": "51.405029296875",
-      "host_location": "Tehran Iran (Islamic Republic of)",
-      "id": 2
+      "cityName": "Paris",
+      "country": "France",
+      "countryCode": "FR",
+      "latitude": "48.817002062798394",
+      "longitude": "2.3510742187500004",
+      "host_location": "Paris France",
+      "id": 3
     }
   ]
 }
